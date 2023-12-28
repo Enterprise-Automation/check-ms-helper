@@ -4,9 +4,9 @@ import (
 	"fmt"
 )
 
-type function func() interface{}
+type Function func() interface{}
 
-func NewCheck(name string, function function) {
+func NewCheck(name string, function Function) {
 	fmt.Println("New Check", name)
 	function()
 }
