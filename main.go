@@ -27,7 +27,7 @@ func RegisterChecks() {
 			postBody, _ := json.Marshal(check.function())
 			requestBody := bytes.NewBuffer(postBody)
 			resp, err := http.Post(os.Getenv("CHECK_CALLBACK_URL"), "application/json", requestBody)
-			if err != nil {
+			if err != nil || resp.StatusCode != 200 {
 				log.Fatalf("An Error Occured %v", err)
 			}
 			defer resp.Body.Close()
