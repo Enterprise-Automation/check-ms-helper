@@ -19,10 +19,12 @@ type check struct {
 var checks []check
 
 func NewCheck(name string, function Function) {
+	fmt.Println("New check: " + name)
 	checks = append(checks, check{name: name, function: function})
 }
 
 func RegisterChecks() {
+	fmt.Println("registering checks")
 	for _, check := range checks {
 		if check.name == os.Getenv("CHECK_ACTION") {
 			fmt.Println("Performing check: " + check.name)
