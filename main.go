@@ -1,12 +1,8 @@
-package main
+package checks
 
 import (
 	"fmt"
 )
-
-func main() {
-
-}
 
 func NewCheck(name string) {
 	fmt.Println("New Check", name)
