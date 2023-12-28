@@ -20,13 +20,9 @@ func NewCheck(name string, function Function) {
 }
 
 func RegisterChecks() {
-	// thingToCheck := "check2"
-	// call the right function
-	fmt.Println(checks)
-	fmt.Println(os.Getenv("ACTION"))
-	// for check, _ := range checks {
-	// 	if check.name == os.Getenv("ACTION")
-
-	// }
-
+	for _, check := range checks {
+		if check.name == os.Getenv("ACTION") {
+			fmt.Println(check.function())
+		}
+	}
 }
