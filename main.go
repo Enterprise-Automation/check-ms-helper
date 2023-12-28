@@ -2,6 +2,7 @@ package checks
 
 import (
 	"fmt"
+	"os"
 )
 
 type Function func() interface{}
@@ -22,4 +23,10 @@ func RegisterChecks() {
 	// thingToCheck := "check2"
 	// call the right function
 	fmt.Println(checks)
+	fmt.Println(os.Getenv("ACTION"))
+	// for check, _ := range checks {
+	// 	if check.name == os.Getenv("ACTION")
+
+	// }
+
 }
