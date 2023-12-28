@@ -4,8 +4,11 @@ import (
 	"fmt"
 )
 
-func NewCheck(name string) {
+type function func() interface{}
+
+func NewCheck(name string, function function) {
 	fmt.Println("New Check", name)
+	function()
 }
 
 func RegisterChecks() {
